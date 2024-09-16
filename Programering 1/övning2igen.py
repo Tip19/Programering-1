@@ -1,0 +1,13 @@
+import time
+mil2 = int(input("Mätarställning i dag? "))
+mil1 = int(input("Mätarställning för ett år sedan? ")) 
+
+while mil2 < mil1:
+    print ("Fel number inmatade testa igen")
+    time.sleep(1)
+    mil2 = int(input("Mätarställning i dag? "))
+    mil1 = int(input("Mätarställning för ett år sedan? ")) 
+
+print("Antal körda mil:", mil2 - mil1)
+liter = float(input("Antal liter bensin? "))
+print(f"Förbrukning per mil: {liter / (mil2 - mil1):.2f}")
