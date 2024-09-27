@@ -1,5 +1,26 @@
 import time
 import random
+
+def getWinBet(coin):
+    while True:
+        try:
+            betting = int(input(f"How much do you want to bet current coin balance {coin}\n")) #f string showing how much money you have
+            break
+        except ValueError: # checks so the user puts in a int
+            print ("incorrect input, please enter a number")
+    bet = 1 # updates variable for later use so the program knows what you betted 
+    while betting > coin or betting < 0: # make sure you can bet the amount you wrote
+        while True:
+            try:
+                betting = int(input("you do not have enough coins for that, bet another amount: "))
+                break
+            except ValueError:
+                print ("incorrect input please enter a number")
+    coin -= betting
+    return betting, bet, coin
+    
+
+
 coin = 10
 play_again = True
 name_p1 = input("Input name: ").lower()
@@ -23,38 +44,12 @@ while play_again: # Reset HP for both players at the start of each game
             betting2 = input ("Do you want to bet on if you win or lose?\n").lower()
 
         if betting2 == 'win':
-            while True:
-                try:
-                    win_betting = int(input(f"How much do you want to bet current coin balance {coin}\n")) #f string showing how much money you have
-                    break
-                except ValueError: # checks so the user puts in a int
-                    print ("incorrect input, please enter a number")
-            won_bet = 1 # updates variable for later use so the program knows what you betted 
-            while win_betting > coin or win_betting < 0: # make sure you can bet the amount you wrote
-                while True:
-                    try:
-                        win_betting = int(input("you do not have enough coins for that, bet another amount: "))
-                        break
-                    except ValueError:
-                        print ("incorrect input please enter a number")
-            coin -= win_betting
+            win_betting, won_bet , coin = getWinBet(coin)
+            
 
         elif betting2 == 'lose': # loop to make sure it's a int
-            while True:
-                 try:     
-                    lose_betting = int(input(f"How much do you want to bet current coin balance {coin}\n")) # f string showing how much money you have
-                    coin -= lose_betting
-                    break
-                 except ValueError: # cheks so the user puts in a int
-                    print("incorrect value, please enter a number")
-            lost_bet = 1 # updates variable for later use so the program knows what you betted
-            while lose_betting > coin or lose_betting < 0:
-                while True:
-                    try:
-                        lose_betting = int(input("you do not have enough coins for that, bet another amount: "))
-                        break
-                    except ValueError:
-                        print ("Incorrect value, please enter a number")
+            lose_betting, lose_bet , coin = getWinBet(coin)
+           
 
 
     for round_number in range (1, rounds + 1):  # loop runs combat choosing random ints and subtracting it from player hp
