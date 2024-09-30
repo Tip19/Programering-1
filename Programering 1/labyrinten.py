@@ -1,4 +1,4 @@
-Room = 2
+Room = 2 #defines room as 2
 def room_designation(Room): #prints what room you are in and inquires if you want to go right or left
     print (f"You are in room: {Room}")
     return input("Where do you want to go: right or left? ").lower()
