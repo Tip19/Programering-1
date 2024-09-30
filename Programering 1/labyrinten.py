@@ -36,6 +36,7 @@ while Room != "exit": #loops until the user has found the exit
          where = input ("you can't go further right, do you want to go left? ").lower() #tells the player they cant go any fruther right
          if where == "left": #checks if the player tries to go left
              room_designation(Room) #check line 2
+             Room -= 1
     elif Room == 1: #if the player tries to go more left than room 1 (the furthest room to the left)
          where = input ("you can't go further left do you want to go left? ").lower()
     else:
