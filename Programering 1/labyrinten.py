@@ -4,15 +4,15 @@ def room_designation(Room):
     return input("Where do you want to go: right or left? ").lower()
 
 def try_again(): 
-    return input ("Invalid input please try again \n")
+    return input ("Invalid input please try again \n").lower()
 
 while Room != "exit":
     where = room_designation(Room)
     
-    if where == "right" and Room < 4:
+    if where == "right":
         Room += 1
         
-    elif where == "left" and Room > 1:
+    elif where == "left":
         Room -= 1
     else:
         try_again()
@@ -32,11 +32,11 @@ while Room != "exit":
             try_again()
             continue
     
-    if Room == 5:
+    if Room == 4:
          where = input ("you can't go further right, do you want to go left? ").lower()
          if where == "left":
              room_designation(Room)
-    elif Room == 1:
+    elif Room == 0:
          where = input ("you can't go further left do you want to go left? ").lower()
     else:
          try_again()
