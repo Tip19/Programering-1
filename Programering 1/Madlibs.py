@@ -1,5 +1,3 @@
-import time
-
 print("Skriv ett ord som korrelerar med följande instruktion\n")
 instruc = ["en plats", "en grej","ett adjektiv", "ett verb", "en till grej", ]
 array = []
