@@ -7,7 +7,8 @@ room_array = [
     "Old weapons and armor lie scattered. Beneath a loose stone, a small iron key waits to be found.",
     "You start in a damp, narrow corridor. Flickering torchlight barely illuminates the uneven stone floor.",
     "A heavy stone door blocks the exit. It’s locked, but a keyhole glimmers, offering a way out.",
-    "An empty, echoing room with faded murals and dripping water. The silence is almost oppressive."
+    "An empty, echoing room with faded murals and dripping water. The silence is almost oppressive.",
+    "Rough, damp walls with moss and hanging stalactites. A shallow pool reflects the faint sound of dripping water."
 ]
 
 # Function Definitions
@@ -37,11 +38,15 @@ while Room != "exit":
         print(room_array[3])  # Description of room 4
         time.sleep(2)
 
+    if Room == 5:
+        print(room_array[4])
+        time.sleep(2)
+
     # Get the player's direction choice
     where = room_designation(Room)
 
     # Move the player based on their choice
-    if where == "right" and Room < 4:
+    if where == "right" and Room < 5:
         Room += 1  # Move right to the next room
     elif where == "left" and Room > 1:
         Room -= 1  # Move left to the previous room
