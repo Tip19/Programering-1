@@ -85,4 +85,3 @@ while Room != "exit":
             Room += 1  # Move right to room 4
         else:
             try_again()  # Handle invalid input
-            continue
