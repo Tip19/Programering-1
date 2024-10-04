@@ -6,7 +6,7 @@ key = 0  # Key status: 0 = not picked up, 1 = picked up
 room_array = [
     "Old weapons and armor lie scattered. Beneath a loose stone, a small iron key waits to be found.",
     "You start in a damp, narrow corridor. Flickering torchlight barely illuminates the uneven stone floor.",
-    "A heavy stone door blocks the exit. It’s locked, but a keyhole glimmers, offering a way out.",
+    "A heavy stone door blocks the exit. It's locked, but a keyhole glimmers, offering a way out.",
     "An empty, echoing room with faded murals and dripping water. The silence is almost oppressive.",
     "Rough, damp walls with moss and hanging stalactites. A shallow pool reflects the faint sound of dripping water."
 ]
