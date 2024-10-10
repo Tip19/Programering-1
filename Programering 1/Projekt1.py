@@ -90,7 +90,7 @@ while börja_om:
         print (f"Du förlorade du fick under 50 procent poäng, totalt fick du {poäng} poäng")
         if betting == "ja":
             pengar -= betting_amount # tar rätt mängd pengar om de förlorade
-        time.sleep(1)
+        time.sleep(2)
         print (f"du har totalt {pengar} pengar")
         börja_om, kör_igen(börja_om)
     
