@@ -1,4 +1,5 @@
 import time
+import random
 börja_om = True
 pengar = 10
 # Quiz frågorna 
@@ -13,6 +14,12 @@ quiz_questions = [
     "Vilken gas utgör majoriteten av jordens atmosfär? ",
     "Vad står förkortningen AI för? ",
     "Vem sjunger låten Shape of You? ",
+    "vilket år började andra världskriget? ",
+    "Vilken är det tyngsta grundämnet i det periodiska systemet? ",
+    "vilken popstjärna är kand som the king of pop? ",
+    "vem är författaren som skrev boken harry potter och de vises sten? ",
+    "vilken webbläsare lanserades av google 2008? ",
+    "vilket programmeringsspråk används ofta flr webbutveckling tillsammans med HTML och CSS? "
 ]
 
 # Quiz svar
@@ -27,12 +34,17 @@ quiz_answer = [
     "kväve",
     "artificial intelligence",
     "ed sheeran",
+    "1939",
+    "uran",
+    "micheal jackson",
+    "jk rowling",
+    "chrome",
+    "javascript"
 ]
 
 # definition för rätt svar
 def right_answer(fråga, poäng, runda):
     print ("du har rätt")
-    fråga +=1
     runda +=1
     poäng +=1
     time.sleep(1)
@@ -42,12 +54,12 @@ def right_answer(fråga, poäng, runda):
 # definiton för fel svar    
 def wrong_answer(fråga, poäng, runda):
     print ("du har fel")
-    fråga +=1
     runda +=1
     time.sleep(1)
     print (f"du har {poäng} poäng")
     return fråga, poäng, runda
 
+# definiton för att köra igen
 def kör_igen(börja_om):
     börja_om = input ("vill du köra igen? ")
     if börja_om == "ja":
@@ -58,7 +70,6 @@ def kör_igen(börja_om):
 
 
 while börja_om:
-    fråga = 0
     poäng = 0
     runda = 0
 
@@ -71,6 +82,7 @@ while börja_om:
 
     #kör i 10 runder
     while runda < 10:
+        fråga = random.randint(0, len(quiz_questions) - 1)
         quiz = input(quiz_questions[fråga]).lower() # printar frågan
     
         if quiz == quiz_answer[fråga]: # kollar om de svarat rätt
