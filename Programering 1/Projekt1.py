@@ -19,7 +19,7 @@ quiz_questions = [
     "vilken popstjärna är kand som the king of pop? ",
     "vem är författaren som skrev boken harry potter och de vises sten? ",
     "vilken webbläsare lanserades av google 2008? ",
-    "vilket programmeringsspråk används ofta flr webbutveckling tillsammans med HTML och CSS? "
+    "vilket programmeringsspråk används ofta för webbutveckling tillsammans med HTML och CSS? "
 ]
 
 # Quiz svar
@@ -67,6 +67,8 @@ def kör_igen(börja_om):
     elif börja_om == "nej":
         börja_om = False
     return börja_om
+    
+
 
 
 while börja_om:
@@ -74,11 +76,13 @@ while börja_om:
     runda = 0
 
     #kollar om du vill betta        
-    betting = input ("vill du betta om du kommer få över 50% poäng: ja/nej")
+    betting = input ("vill du betta om du kommer få över 50% poäng: ja/nej ")
     if betting == "ja":
         betting_amount = int(input ("hur mycket vill du betta? ")) # kollar hur mycket du vill betta
         while betting_amount > pengar or betting_amount <= 0:# ser till att du inte försöker betta mer än vad du har
             betting_amount = int(input (f"Du har inte {betting_amount} pengar du har {pengar} pengar, hur mycket vill du betta? "))
+
+                
 
     #kör i 10 runder
     while runda < 10:
