@@ -2,8 +2,46 @@ import time
 import random
 börja_om = True
 pengar = 10
-# Quiz frågorna 
-quiz_questions = [
+
+def right_answer(fråga, poäng, runda):
+    print ("du har rätt")
+    runda +=1
+    poäng +=1
+    time.sleep(1)
+    print (f"du har {poäng} poäng")
+    delete()
+    return fråga, poäng, runda
+
+# metod för fel svar    
+def wrong_answer(fråga, poäng, runda):
+    print ("du har fel")
+    runda +=1
+    time.sleep(1)
+    print (f"du har {poäng} poäng")
+    delete()
+    return fråga, poäng, runda
+
+# metod för att köra igen
+def kör_igen(börja_om):
+    börja_om = input ("vill du köra igen? ")
+    if börja_om == "ja":
+        börja_om = True
+    elif börja_om == "nej":
+        börja_om = False
+    return börja_om
+
+def delete():
+    del quiz_answer[fråga]
+    del quiz_questions[fråga]
+    
+
+
+
+while börja_om:
+    poäng = 0
+    runda = 0
+    # Quiz frågorna 
+    quiz_questions = [
     "Vad är huvudstaden i Sverige? ",
     "Vilken planet är känd som den röda planeten? ",
     "I vilken sport tävlar man i Tour de France? ",
@@ -21,9 +59,8 @@ quiz_questions = [
     "vilken webbläsare lanserades av google 2008? ",
     "vilket programmeringsspråk används ofta för webbutveckling tillsammans med HTML och CSS? "
 ]
-
-# Quiz svar
-quiz_answer = [
+    # Quiz svaren
+    quiz_answer = [
     "stockholm",
     "mars",
     "cykling",
@@ -41,39 +78,6 @@ quiz_answer = [
     "chrome",
     "javascript"
 ]
-
-# definition för rätt svar
-def right_answer(fråga, poäng, runda):
-    print ("du har rätt")
-    runda +=1
-    poäng +=1
-    time.sleep(1)
-    print (f"du har {poäng} poäng")
-    return fråga, poäng, runda
-
-# definiton för fel svar    
-def wrong_answer(fråga, poäng, runda):
-    print ("du har fel")
-    runda +=1
-    time.sleep(1)
-    print (f"du har {poäng} poäng")
-    return fråga, poäng, runda
-
-# definiton för att köra igen
-def kör_igen(börja_om):
-    börja_om = input ("vill du köra igen? ")
-    if börja_om == "ja":
-        börja_om = True
-    elif börja_om == "nej":
-        börja_om = False
-    return börja_om
-    
-
-
-
-while börja_om:
-    poäng = 0
-    runda = 0
 
     #kollar om du vill betta        
     betting = input ("vill du betta om du kommer få över 50% poäng: ja/nej ")
@@ -108,6 +112,4 @@ while börja_om:
             pengar -= betting_amount # tar rätt mängd pengar om de förlorade
         time.sleep(2)
         print (f"du har totalt {pengar} pengar")
-        börja_om, kör_igen(börja_om)
-    
-    # kollar om de vill köra igen
+        börja_om, kör_igen(börja_om) # kollar om de vill köra igen
