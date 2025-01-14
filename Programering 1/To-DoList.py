@@ -11,7 +11,7 @@ def Edit_list(Add_remove):
         return Add
     
     elif Add_Remove == "remove":
-        time.sleep(1)
+        time.sleep(2)
         Remove = input ("What do you want to remove from the list?\nAnswer: ").lower()
         if {"task": Remove} in To_Do_list: # Checks if the item the user wants to remove is in the list
             To_Do_list.remove({"task": Remove}) # (Help with syntax by AI)
