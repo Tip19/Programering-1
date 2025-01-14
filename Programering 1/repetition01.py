@@ -13,8 +13,8 @@ while True:
             print ("your guess is too high")
         elif guessing == num:
             print (f"you are correct the nubmer was {num}")
+            break
         elif guessing < num:
             print ("your guess is too low")
-            break
     except ValueError:
         print("please only put in numbers")
