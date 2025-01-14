@@ -3,6 +3,7 @@ import random
 börja_om = True
 pengar = 10
 
+# metod för rätt svar
 def right_answer(fråga, poäng, runda):
     print ("du har rätt")
     runda +=1
@@ -30,6 +31,7 @@ def kör_igen(börja_om):
         börja_om = False
     return börja_om
 
+# metod för att ta bort 
 def delete():
     del quiz_answer[fråga]
     del quiz_questions[fråga]
