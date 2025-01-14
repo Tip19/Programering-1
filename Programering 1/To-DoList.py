@@ -1,8 +1,9 @@
 import time
-To_Do_list = [ # stores the list of things 
+To_Do_list = [ # stores the list of tasks 
     {"task": "homework"},
     {"task": "walk the dog"},
 ]
+#lets user add something to their list
 def Edit_list(Add_remove):
     if Add_Remove == "add": # runs code below only if the user wants to add something to the To-Do list
         time.sleep(1)
@@ -10,6 +11,7 @@ def Edit_list(Add_remove):
         To_Do_list.append({"task": Add}) # Adds the item to their To-Do list (Help with syntax by AI)
         return Add
     
+# lets user type what they want to remove and checks if it is in the list
     elif Add_Remove == "remove":
         time.sleep(2)
         Remove = input ("What do you want to remove from the list?\nAnswer: ").lower()
@@ -20,6 +22,7 @@ def Edit_list(Add_remove):
             time.sleep(2)
             print ("\nthis task is not in your To-Do list")
 
+# prints the list and asks if you want to add or remove something
 while True: # loops until the user is either done adding or removing from their list
     for item in To_Do_list: # runs until every item is printed in the list
      time.sleep(1)
