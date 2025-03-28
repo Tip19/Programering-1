@@ -8,7 +8,7 @@ To_Do_list = [
 ]
 
 # Function to add a task to the To-Do list
-def Add(Add_remove):
+def Add():
     if Add_Remove == "add": # Only runs if the user wants to add a task
         time.sleep(1)
         Add = input ("what do you want to add to your To-Do list?\nAnswer: ").lower()
@@ -16,7 +16,7 @@ def Add(Add_remove):
         return Add
     
 # Function to remove task from the To-Do list
-def Remove(Add_remove):
+def Remove():
     if Add_Remove == "remove":
         time.sleep(2)
         print ("What do you want to remove from the list?")
@@ -44,12 +44,16 @@ while True:
     Add_Remove = input ("do you want to add or remove something from your To-Do list or are you done?\nAnswer: ").lower()
 
     # Exits the loop if the user is finished
-    if Add_Remove == "no" or "done":
-        break
     # Calls the right function depending on what the users choice
-    elif Add_Remove == "add":
-        Add(Add_Remove)
+    if Add_Remove == "add":
+        Add()
+
     elif Add_Remove == "remove":
-        Remove(Add_Remove)
-    else:
-        print ("Invalid input please type add or remove or done")
+        Remove()
+
+    elif Add_Remove != "add" and Add_Remove != "remove" and Add_Remove != "no" and Add_Remove != "done":
+        time.sleep(1)
+        print ("\nInvalid input please type add or remove or done")
+
+    elif Add_Remove == "no" or "done":
+        break
